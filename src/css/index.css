@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 11, 32);
+    background-color: #323a40;
+    color: #03e9f4;
+}
+
+.box {
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, .6);
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.box:nth-child(1) {
+    animation: 0.5s fade_in_transit;
+}
+
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+section {
+    align-items: center;
+}
+
+.btn {
+    display:block;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #37b0c0;
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    margin-top: 34px;
+}
+
+.btn:hover {
+    color: #267883;
+}
+
+section:nth-child(1) {
+    animation: 1s fade_in linear;
+}
+section:nth-child(2) {
+    animation: 2s fade_in linear;
+}
+section:nth-child(3) {
+    animation: 3s fade_in linear;
+}
+
+.btn:hover>span {
+    position: absolute;
+}
+
+.btn>span:nth-child(1) {
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #036bf4);
+    left: -100%;
+    top: 0;
+    animation: span-line-one 1s linear infinite;
+}
+
+.btn>span:nth-child(2) {
+    width: 2px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent, #032ff4);
+    right: 0;
+    top: -100%;
+    animation: span-line-two 1s .25s linear infinite;
+}
+
+.btn>span:nth-child(3) {
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to left, transparent, #4b03f4);
+    left: 100%;
+    bottom: 0;
+    animation: span-line-three 1s .5s linear infinite;
+}
+
+.btn>span:nth-child(4) {
+    width: 2px;
+    height: 100%;
+    background-image: linear-gradient(to top, transparent, #032ff4);
+    left: 0;
+    bottom: -100%;
+    animation: span-line-four 1s .75s linear infinite;
+}
+
+@keyframes span-line-one {
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes span-line-two {
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes span-line-three {
+    50%,
+    100% {
+        left: -100%;
+    }
+}
+
+@keyframes span-line-four {
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+@keyframes fade_in_transit {
+    0%      {opacity: 0}
+    100%    {opacity: 1}
+}
+
+@keyframes fade_in {
+    0%      {opacity: 0}
+    25%     {opacity: 0}
+    50%     {opacity: 0}
+    75%     {opacity: 0}
+    100%    {opacity: 1}
+}
