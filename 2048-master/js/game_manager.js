@@ -1,7 +1,10 @@
 let audios = [];
 for (let i = 1; i <= 21; ++i) {
   let path = "/sources/" + i + ".wav";
-  audios.push(new Audio(path));
+  var audio = new Audio();
+  audio.src = path;
+  audio.preload = 'auto';
+  audios.push(audio);
 }
 function GameManager(size, InputManager, Actuator, StorageManager) {
   this.size = size; // Size of the grid
