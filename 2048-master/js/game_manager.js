@@ -1,6 +1,6 @@
 let audios = [];
 for (let i = 1; i <= 21; ++i) {
-  let path = "/sources/" + i + ".wav";
+  let path = "/sources/" + i + ".mp3";
   var audio = new Audio();
   audio.src = path;
   audio.preload = 'auto';
