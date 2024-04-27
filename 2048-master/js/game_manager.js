@@ -164,11 +164,8 @@ GameManager.prototype.move = function (direction) {
         if (next && next.value === tile.value && !next.mergedFrom) {
           var merged = new Tile(positions.next, tile.value * 2);
           merged.mergedFrom = [tile, next];
-          let number = Math.floor(Math.random() * 10) + 1;
-          if (number <= 2) {
-            let random = Math.floor(Math.random() * 21);
-            audios[random].play();
-          }
+          let random = Math.floor(Math.random() * 21);
+          audios[random].play();
           self.grid.insertTile(merged);
           self.grid.removeTile(tile);
 
