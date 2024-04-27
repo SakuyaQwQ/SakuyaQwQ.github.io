@@ -1,3 +1,8 @@
+let audios = [];
+for (let i = 1; i <= 21; ++i) {
+  let path = "/sources/" + i + ".wav";
+  audios.push(new Audio(path));
+}
 function GameManager(size, InputManager, Actuator, StorageManager) {
   this.size = size; // Size of the grid
   this.inputManager = new InputManager;
@@ -158,10 +163,8 @@ GameManager.prototype.move = function (direction) {
           merged.mergedFrom = [tile, next];
           let number = Math.floor(Math.random() * 10) + 1;
           if (number <= 2) {
-            let random = Math.floor(Math.random() * 21) + 1;
-            let path = "/sources/" + random + ".wav";
-            let audio = new Audio(path);
-            audio.play();
+            let random = Math.floor(Math.random() * 21);
+            audios[random].play();
           }
           self.grid.insertTile(merged);
           self.grid.removeTile(tile);
